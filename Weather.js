@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const Weather = ({ city = "New York" }) => {
   const [weather, setWeather] = useState(null);
-  const apiKey = "af91f03a8bed86bc8f9ca5d056d0d81c"; // your magic 🔑
+  const apiKey = "9cc1902da01f1df09be0cd42b3abd7f4"; // your magic 🔑
 
   useEffect(() => {
     const fetchWeather = async () => {
