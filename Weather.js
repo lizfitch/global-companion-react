@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 
 const Weather = ({ city = "New York" }) => {
   const [weather, setWeather] = useState(null);
-  const apiKey = "9cc1902da01f1df09be0cd42b3abd7f4"; // your magic 🔑
+  const apiKey = process.env.REACT_APP_WEATHER_KEY; // ✅ safe, clean, fabulous
+
 
   useEffect(() => {
     const fetchWeather = async () => {
