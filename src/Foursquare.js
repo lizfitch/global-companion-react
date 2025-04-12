@@ -6,7 +6,7 @@ const Foursquare = () => {
   const [venues, setVenues] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const apiKey = "fsq3z2asuD7vDL+WUrP5ALBzLZCbGAdANmVfhNMyx0Q+x2U=";
+  const apiKey = process.env.REACT_APP_FOURSQUARE_API_KEY;
 
   const searchPlaces = async () => {
     if (!query) return;
