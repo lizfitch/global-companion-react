@@ -1,0 +1,1 @@
+// Code for GlobalCompanion component (already provided in Canvas)
