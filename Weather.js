@@ -1,24 +1,28 @@
 // Weather.js
 import React, { useState, useEffect } from 'react';
 
-const Weather = ({ city = "New York" }) => {
+const Weather = () => {
   const [weather, setWeather] = useState(null);
+  const [city, setCity] = useState('');
   const apiKey = process.env.REACT_APP_WEATHER_KEY;
 
   useEffect(() => {
-    const fetchWeather = async () => {
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      const { latitude, longitude } = position.coords;
       try {
         const res = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`
         );
         const data = await res.json();
+        setCity(data.name);
         setWeather(data);
       } catch (err) {
         console.error("Weather fetch failed:", err);
       }
-    };
-    fetchWeather();
-  }, [city]);
+    });
+  }, []);
 
   if (!weather || weather.cod !== 200) return <p style={{ textAlign: 'center' }}>Loading weather...</p>;
 
@@ -28,7 +32,7 @@ const Weather = ({ city = "New York" }) => {
     <div style={{ textAlign: 'center', marginTop: '10px' }}>
       <h2 style={{ marginBottom: '5px' }}>
         <img src={iconUrl} alt={weather.weather[0].description} style={{ verticalAlign: 'middle', height: '48px' }} />
-        &nbsp;{weather.name} Weather
+        &nbsp;{city} Weather
       </h2>
       <p style={{ margin: 0 }}>
         {weather.weather[0].description}<br />
@@ -39,5 +43,3 @@ const Weather = ({ city = "New York" }) => {
 };
 
 export default Weather;
-
-
