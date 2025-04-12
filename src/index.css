@@ -1,1 +1,22 @@
-body { font-family: Georgia, serif; background: #f9f9f9; margin: 0; }
+body {
+  font-family: Georgia, serif;
+  margin: 0;
+  background: #f9f9f9;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  z-index: 9999;
+}
