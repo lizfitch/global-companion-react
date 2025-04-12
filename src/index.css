@@ -1,15 +1,1 @@
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(to bottom, #f9f9f9, #e6ecf0);
-  color: #333;
-}
-.globe-spin {
-  animation: spin 8s linear infinite;
-  height: 100px;
-  width: 100px;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+body { font-family: Georgia, serif; }
