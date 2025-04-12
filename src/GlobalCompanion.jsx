@@ -32,6 +32,7 @@ const GlobalCompanion = () => {
         }}
       />
       <h1>🌍 Global Companion</h1>
+      <p>{new Date().toLocaleString()}</p>
       {weather && (
         <p>
           📍 {weather.name} – {weather.weather[0].description}, {Math.round(weather.main.temp)}°F
