@@ -72,30 +72,3 @@ const App = () => {
 
 export default App;
 
-/* index.css */
-/* Ensure this is saved in src/index.css */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 24px;
-  margin: 20px auto;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  max-width: 500px;
-  backdrop-filter: blur(6px);
-  font-family: Georgia, serif;
-}
-
-.toast {
-  text-align: center;
-  background-color: #fffae6;
-  border: 1px solid #ffe58f;
-  padding: 10px;
-  margin: 20px;
-  border-radius: 12px;
-  font-family: Georgia, serif;
-}
