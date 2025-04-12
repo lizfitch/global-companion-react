@@ -1,1 +1,5 @@
-export default function App() { return <h1>Global Companion</h1>; }
+import React from "react";
+import GlobalCompanion from "./GlobalCompanion";
+export default function App() {
+  return <GlobalCompanion />;
+}
