@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const Weather = ({ city = "New York" }) => {
   const [weather, setWeather] = useState(null);
-  const apiKey = process.env.REACT_APP_WEATHER_KEY; // ✅ safe, clean, fabulous
-
+  const apiKey = process.env.REACT_APP_WEATHER_KEY;
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -21,13 +20,18 @@ const Weather = ({ city = "New York" }) => {
     fetchWeather();
   }, [city]);
 
-  if (!weather || weather.cod !== 200) return <p>☁️ Loading weather...</p>;
+  if (!weather || weather.cod !== 200) return <p style={{ textAlign: 'center' }}>Loading weather...</p>;
+
+  const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h2 style={{ margin: '10px 0' }}>🌤️ {weather.name} Weather</h2>
+    <div style={{ textAlign: 'center', marginTop: '10px' }}>
+      <h2 style={{ marginBottom: '5px' }}>
+        <img src={iconUrl} alt={weather.weather[0].description} style={{ verticalAlign: 'middle', height: '48px' }} />
+        &nbsp;{weather.name} Weather
+      </h2>
       <p style={{ margin: 0 }}>
-        {weather.weather[0].description} <br />
+        {weather.weather[0].description}<br />
         Temp: {Math.round(weather.main.temp)}°F
       </p>
     </div>
@@ -35,4 +39,5 @@ const Weather = ({ city = "New York" }) => {
 };
 
 export default Weather;
+
 
