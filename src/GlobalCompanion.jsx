@@ -1,6 +1,4 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -35,23 +33,21 @@ const GlobalCompanion = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <Card className="rounded-2xl shadow-2xl border-0 bg-white">
-            <CardContent className="p-6 space-y-4">
-              <p className="text-xl font-semibold text-pink-600">
-                📍 Explore Nearby
-              </p>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-                <input
-                  type="text"
-                  placeholder="Enter a city (e.g. Paris)"
-                  className="w-full md:w-2/3 p-3 border rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
-                />
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-6 py-3 rounded-xl">
-                  Search
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="rounded-2xl shadow-2xl border-0 bg-white p-6 space-y-4">
+            <p className="text-xl font-semibold text-pink-600">
+              📍 Explore Nearby
+            </p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+              <input
+                type="text"
+                placeholder="Enter a city (e.g. Paris)"
+                className="w-full md:w-2/3 p-3 border rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+              <button className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-6 py-3 rounded-xl">
+                Search
+              </button>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -59,23 +55,21 @@ const GlobalCompanion = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.6 }}
         >
-          <Card className="rounded-2xl shadow-lg border-0 bg-white mt-10">
-            <CardContent className="p-6">
-              <h2 className="text-xl font-bold text-blue-800 mb-2">
-                🛡️ Safety Info
-              </h2>
-              <p className="text-sm text-gray-600 mb-3 italic">
-                Travel smart: Stick to well-lit areas, stay aware, and always trust your instincts.
-              </p>
-              <ul className="text-left space-y-2 text-gray-700">
-                <li>🔒 Keep your location private unless necessary</li>
-                <li>🧳 Use hotel safes for passports and valuables</li>
-                <li>📤 Share your itinerary with someone you trust</li>
-                <li>👁 Stay alert in crowded areas</li>
-                <li>💳 Carry a backup credit card, not your life savings</li>
-              </ul>
-            </CardContent>
-          </Card>
+          <div className="rounded-2xl shadow-lg border-0 bg-white mt-10 p-6">
+            <h2 className="text-xl font-bold text-blue-800 mb-2">
+              🛡️ Safety Info
+            </h2>
+            <p className="text-sm text-gray-600 mb-3 italic">
+              Travel smart: Stick to well-lit areas, stay aware, and always trust your instincts.
+            </p>
+            <ul className="text-left space-y-2 text-gray-700">
+              <li>🔒 Keep your location private unless necessary</li>
+              <li>🧳 Use hotel safes for passports and valuables</li>
+              <li>📤 Share your itinerary with someone you trust</li>
+              <li>👁 Stay alert in crowded areas</li>
+              <li>💳 Carry a backup credit card, not your life savings</li>
+            </ul>
+          </div>
         </motion.div>
       </div>
     </div>
